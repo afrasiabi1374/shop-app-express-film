@@ -1,0 +1,129 @@
+{% extends "layout/base.html" %}
+{% block css %}
+{% endblock %}
+{% block navbar %}
+<div class="col-12">
+    <h2 class="float-start mb-0">
+        {{ t('user.profile') }}
+    </h2>
+</div>
+{% endblock %}
+
+{% block body %}
+<div class="content-body">
+    <div class="card">
+        <div class="card-header">
+        </div>
+        <div class="card-body">
+            <div class="card-text">
+                <form class="form form-horizontal" method="post" action="" enctype="multipart/form-data">
+                    {{ csrf_token  }} <!-- add csrf token -->
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="mb-1 row">
+                                <div class="col-sm-3">
+                                    <label class="col-form-label" for="first_name">
+                                        {{ t('user.profile_first_name') }} : 
+                                        <span class="text-danger">*</span>
+                                    </label>
+                                </div>
+                                <div class="col-sm-9">
+                                    <input type="text" id="first_name" class="form-control" name="first_name">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="mb-1 row">
+                                <div class="col-sm-3">
+                                    <label class="col-form-label" for="last_name">
+                                        {{ t('user.profile_last_name') }} : 
+                                        <span class="text-danger">*</span>
+                                    </label>
+                                </div>
+                                <div class="col-sm-9">
+                                    <input type="text" id="last_name" class="form-control" name="last_name">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="mb-1 row">
+                                <div class="col-sm-3">
+                                    <label class="col-form-label" for="email">
+                                        {{ t('user.profile_email') }} : 
+                                        <span class="text-danger">*</span>
+                                    </label>
+                                </div>
+                                <div class="col-sm-9">
+                                    <input dir="ltr" type="text" id="email" class="form-control" name="email">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="mb-1 row">
+                                <div class="col-sm-3">
+                                    <label class="col-form-label" for="pass1">
+                                        {{ t('user.profile_pass1') }} : 
+                                    </label>
+                                </div>
+                                <div class="col-sm-9">
+                                    <input dir="ltr" type="text" id="pass1" class="form-control" name="pass1">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="mb-1 row">
+                                <div class="col-sm-3">
+                                    <label class="col-form-label" for="pass2">
+                                        {{ t('user.profile_pass2') }} : 
+                                    </label>
+                                </div>
+                                <div class="col-sm-9">
+                                    <input dir="ltr" type="text" id="pass2" class="form-control" name="pass2">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="mb-1 row">
+                                <div class="col-sm-3">
+                                    <label class="col-form-label" for="pass3">
+                                        {{ t('user.profile_pass3') }} : 
+                                    </label>
+                                </div>
+                                <div class="col-sm-9">
+                                    <input dir="ltr" type="text" id="pass3" class="form-control" name="pass3">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="mb-1 row">
+                                <div class="col-sm-3">
+                                    <label class="col-form-label" for="avatar">
+                                        {{ t('user.profile_avatar') }} : 
+                                    </label>
+                                </div>
+                                <div class="col-sm-9">
+                                    <input dir="ltr" type="file" id="avatar" class="form-control" name="avatar">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-9 offset-sm-3">
+                            <button type="submit" class="btn btn-primary me-1">
+                                {{ t('user.profile_save') }}
+                            </button>
+                            <button type="button" onclick="redirect(APP_URL);" class="btn btn-danger">
+                                {{ t('user.profile_back') }}
+                            </button>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block js %}
+{% endblock %}
